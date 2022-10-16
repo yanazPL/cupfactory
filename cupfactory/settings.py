@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     
     'rest_framework',
     'rest_framework.authtoken',
+    'drf_spectacular',
     'players',
     'tournaments',
 ]
@@ -69,6 +70,7 @@ REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework.authentication.TokenAuthentication',
     ],
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
 }
 
 ROOT_URLCONF = 'cupfactory.urls'
@@ -149,3 +151,10 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTHENTICATION_BACKENDS = ('django.contrib.auth.backends.ModelBackend')
+
+SPECTACULAR_SETTINGS = {
+"TITLE": "Cup factory project",
+"DESCRIPTION": "A sample project to learn about DRF",
+"VERSION": "1.0.0",
+# OTHER SETTINGS
+}
